@@ -1,0 +1,29 @@
+
+{% block title%}
+	Liste des taches
+{% endblock %}
+{% block body %}
+	{% if taches %}
+		<table id="taches" class="table table-striped">
+			<thead>
+				<tr>
+					<th>Titre</th>
+					<th>Descrition</th>
+					<th>Date Limite</th>
+				</tr>
+			</thead>
+			<tbody>
+				{% for tache in taches %}
+					<tr>
+						<td>{{ tache.Titre }}</td>
+						<td>{{ tache.Description }}</td>
+						<td>{{ tache.Date_limite}}</td>
+						
+					</tr>
+				{% endfor %}
+			</tbody>
+		</table>
+	{% else %}
+		<p>Aucune tache</p>
+	{% endif %}
+{% endblock %}
